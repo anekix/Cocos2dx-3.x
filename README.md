@@ -39,3 +39,8 @@ sprite->runAction(RepeatForever::create(anim_action));
 sprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
 this->addChild(sprite, 2);
 ```
+
+Flip sprites
+```cpp
+sprite->setFlippedX(true); 
+```
