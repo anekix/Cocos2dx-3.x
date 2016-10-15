@@ -16,4 +16,26 @@ Particle system
 auto emitter = ParticleGalaxy::create();
 this->addChild(emitter,10);
 ```
+Spritesheet animation
 
+```cpp
+auto cache = SpriteFrameCache::getInstance();
+cache->addSpriteFramesWithFile("run.plist");
+Vector<SpriteFrame*> frames = Vector<SpriteFrame*>();
+
+
+frames.pushBack(cache->getSpriteFrameByName("0001.png"));
+frames.pushBack(cache->getSpriteFrameByName("0002.png"));
+frames.pushBack(cache->getSpriteFrameByName("0003.png"));
+frames.pushBack(cache->getSpriteFrameByName("0004.png"));
+frames.pushBack(cache->getSpriteFrameByName("0005.png"));
+frames.pushBack(cache->getSpriteFrameByName("0006.png"));
+Animation* anim = cocos2d::Animation::createWithSpriteFrames(frames, 0.1f, 1);
+
+Animate* anim_action = cocos2d::Animate::create(anim);
+auto sprite = Sprite::create("boy1.png");
+//sprite is already added to scene elsewhere and ready to go
+sprite->runAction(RepeatForever::create(anim_action));
+sprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
+this->addChild(sprite, 2);
+```
