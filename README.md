@@ -44,3 +44,16 @@ Flip sprites
 ```cpp
 sprite->setFlippedX(true); 
 ```
+
+
+Buttons
+```cpp
+
+#include "ui/CocosGUI.h"
+using namespace ui;
+
+ auto BRight = Button::create("left.png");
+ BRight->setPosition(Vec2(visibleSize.width/2 + origin.x-100, visibleSize.height/2 + origin.y));
+ this->addChild(BRight, 60);
+
+```
