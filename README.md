@@ -30,7 +30,7 @@ Loading  a level file from TMX file
 ```cpp
 auto tmxMap = TMXTiledMap::create("level1.tmx");
 this->addChild(tmxMap,90,99);
-    ```
+```
 Spritesheet animation
 
 ```cpp
