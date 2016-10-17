@@ -26,7 +26,11 @@ m_emitter->setVisible(true);
 m_emitter->retain();
 this->addChild(m_emitter,40);
 ```
-
+Loading  a level file from TMX file
+```cpp
+auto tmxMap = TMXTiledMap::create("level1.tmx");
+this->addChild(tmxMap,90,99);
+    ```
 Spritesheet animation
 
 ```cpp
