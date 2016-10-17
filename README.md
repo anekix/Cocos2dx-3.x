@@ -31,6 +31,27 @@ Loading  a level file from TMX file
 auto tmxMap = TMXTiledMap::create("level1.tmx");
 this->addChild(tmxMap,90,99);
 ```
+
+Setting position of a sprite to th elocation defined inside tmx file
+```cpp
+
+auto _tileMap = TMXTiledMap::create("level1.tmx");
+this->addChild(_tileMap,90,99);
+
+auto objectGroup = _tileMap->getObjectGroup("objects");
+ 
+if(objectGroup == NULL){
+   log("tile map has no objects object layer");
+    return false;
+}
+ 
+//spawnPoint is defined as a object in object layer in tmx file
+auto spawnPoint = objectGroup->getObject("SpawnPoint");
+    int x = spawnPoint["x"].asInt();
+    int y = spawnPoint["y"].asInt();
+ 
+sprite->setPosition(Vec2(x,y));
+```
 Spritesheet animation
 
 ```cpp
