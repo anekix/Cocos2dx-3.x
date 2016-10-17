@@ -16,6 +16,17 @@ Particle system
 auto emitter = ParticleGalaxy::create();
 this->addChild(emitter,10);
 ```
+
+Custom particles using a .plist file(remember to include texture image in the resources folder)
+```cpp
+
+auto m_emitter = ParticleSystemQuad::create("kk.plist");
+m_emitter->setPosition(Vec2(visibleSize.width/2 + origin.x+40, visibleSize.height/2 + origin.y));
+m_emitter->setVisible(true);
+m_emitter->retain();
+this->addChild(m_emitter,40);
+```
+
 Spritesheet animation
 
 ```cpp
